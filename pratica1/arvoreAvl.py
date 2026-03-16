@@ -22,3 +22,14 @@ class ArvoreAVL:
         else:
             return True
 
+    def getAltura(self, no):
+        if no is None:
+            return 0
+
+        return no.altura     
+
+    def getFatorBalanceamento(self, no):
+        if no is None: 
+            return 0
+
+        return self.getAltura(no.esquerdo) - self.getAltura(no.direito)
