@@ -1,3 +1,5 @@
+import random
+
 class NoAVL:
     def __init__(self, valor):
         self.valor = valor
@@ -91,3 +93,37 @@ class ArvoreAVL:
                 return self.rde(noAtual)
 
         return noAtual        
+    
+# ÁREA DE EXECUÇÃO
+
+if __name__ == "__main__":
+    print("--- Experimentos da Árvore AVL ---\n")
+    
+    print("- TESTE 1: INSERÇÕES ORDENADAS\n")
+    for n in range(10000, 100001, 10000):
+        print(f"Testando para N = {n}:")
+
+        for arvores in range(10):
+            arvore = ArvoreAVL()
+
+            for i in range(1, n+1):
+                arvore.raiz = arvore.inserir(arvore.raiz, i)
+
+            achou, comparacoes = arvore.buscar(arvore.raiz, 100001)
+            print(f"Árvore {arvores + 1}: {comparacoes} comparações.")
+
+    print("- TESTE 2: INSERÇÕES ALEATÓRIAS\n")
+    for n in range(10000, 100001, 10000):
+        print(f"Testando para N = {n}:")
+
+        for arvores in range(10):
+            arvore = ArvoreAVL()
+
+            elementos = list(range(1, n+1))
+            random.shuffle(elementos)
+
+            for i in elementos:
+                arvore.raiz = arvore.inserir(arvore.raiz, i)
+
+            achou, comparacoes = arvore.buscar(arvore.raiz, 100001)
+            print(f"Árvore {arvores + 1}: {comparacoes} comparações.")
