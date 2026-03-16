@@ -97,11 +97,11 @@ class ArvoreAVL:
 # ÁREA DE EXECUÇÃO
 
 if __name__ == "__main__":
-    print("--- Experimentos da Árvore AVL ---\n")
+    print("--- Experimentos da Árvore AVL ---")
     
-    print("- TESTE 1: INSERÇÕES ORDENADAS\n")
+    print("\n- TESTE 1: INSERÇÕES ORDENADAS\n")
     for n in range(10000, 100001, 10000):
-        print(f"Testando para N = {n}:")
+        print(f"\nTestando para N = {n}:")
 
         for arvores in range(10):
             arvore = ArvoreAVL()
@@ -112,9 +112,9 @@ if __name__ == "__main__":
             achou, comparacoes = arvore.buscar(arvore.raiz, 100001)
             print(f"Árvore {arvores + 1}: {comparacoes} comparações.")
 
-    print("- TESTE 2: INSERÇÕES ALEATÓRIAS\n")
+    print("\n- TESTE 2: INSERÇÕES ALEATÓRIAS")
     for n in range(10000, 100001, 10000):
-        print(f"Testando para N = {n}:")
+        print(f"\nTestando para N = {n}:")
 
         for arvores in range(10):
             arvore = ArvoreAVL()
