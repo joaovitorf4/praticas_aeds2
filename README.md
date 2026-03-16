@@ -37,10 +37,9 @@ Comparação de desempenho e eficiência entre uma Árvore Binária de Pesquisa 
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/joaovitorf4/praticas_aeds2.git](https://github.com/joaovitorf4/praticas_aeds2.git)
+   git clone https://github.com/joaovitorf4/praticas_aeds2.git
    cd praticas_aeds2
    ```
 
 2. **Execução:**
    * Execute os códigos de acordo com as linguagens utilizadas em cada prática.
-```
