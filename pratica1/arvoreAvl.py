@@ -9,18 +9,18 @@ class ArvoreAVL:
     def __init__(self):
         self.raiz = None
 
-    def buscar(self, noAtual, valorBuscado):
+    def buscar(self, noAtual, valorBuscado, quantidade = 0):
         if noAtual is None:
-            return False
+            return (False, quantidade)
 
         if valorBuscado < noAtual.valor:
-            return self.buscar(noAtual.esquerdo, valorBuscado)
+            return self.buscar(noAtual.esquerdo, valorBuscado, quantidade+1)
 
         elif valorBuscado > noAtual.valor:
-            return self.buscar(noAtual.direito, valorBuscado)
+            return self.buscar(noAtual.direito, valorBuscado, quantidade+1)
 
         else:
-            return True
+            return (True, quantidade)
 
     def getAltura(self, no):
         if no is None:
