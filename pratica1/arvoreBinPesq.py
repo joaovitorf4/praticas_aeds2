@@ -96,12 +96,17 @@ if __name__ == "__main__":
 		print(f"  Número de comparações realizadas: {num_comparacoes}")
 		print("-" * 40)
 
-	plt.figure(figsize=(10, 6))
-	plt.plot(tamanhos, comps_aleatorias, marker='o', label='Aleatórios')
-	plt.plot(tamanhos, comps_ordenadas, marker='s', label='Ordenados')
-	plt.title('Comparação do Número de Comparações na Busca')
-	plt.xlabel('Quantidade de Elementos (n)')
-	plt.ylabel('Número de Comparações')
-	plt.legend()
-	plt.grid(True)
-	plt.show()
+    # Gera o grafico com os dados coletados a cima
+    plt.figure(figsize=(10, 6))
+    plt.plot(tamanhos, comps_aleatorias, marker='o', label='Aleatórios')
+    plt.plot(tamanhos, comps_ordenadas, marker='s', label='Ordenados')
+    plt.title('Comparação do Número de Comparações na Busca')
+    plt.xlabel('Quantidade de Elementos (n)')
+    plt.ylabel('Número de Comparações')
+    plt.legend()
+    plt.grid(True)
+
+    # Salva o gráfico em um arquivo de imagem no mesmo diretório
+    plt.savefig("grafico.png")
+
+    plt.show()

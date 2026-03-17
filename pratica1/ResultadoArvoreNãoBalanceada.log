@@ -1,0 +1,60 @@
+Árvore com 10000 elementos aleatórios:
+  Número de comparações realizadas: 8
+----------------------------------------
+Árvore com 20000 elementos aleatórios:
+  Número de comparações realizadas: 10
+----------------------------------------
+Árvore com 30000 elementos aleatórios:
+  Número de comparações realizadas: 10
+----------------------------------------
+Árvore com 40000 elementos aleatórios:
+  Número de comparações realizadas: 16
+----------------------------------------
+Árvore com 50000 elementos aleatórios:
+  Número de comparações realizadas: 13
+----------------------------------------
+Árvore com 60000 elementos aleatórios:
+  Número de comparações realizadas: 10
+----------------------------------------
+Árvore com 70000 elementos aleatórios:
+  Número de comparações realizadas: 10
+----------------------------------------
+Árvore com 80000 elementos aleatórios:
+  Número de comparações realizadas: 9
+----------------------------------------
+Árvore com 90000 elementos aleatórios:
+  Número de comparações realizadas: 6
+----------------------------------------
+Árvore com 100000 elementos aleatórios:
+  Número de comparações realizadas: 10
+----------------------------------------
+Árvore com 10000 elementos ordenados:
+  Número de comparações realizadas: 10000
+----------------------------------------
+Árvore com 20000 elementos ordenados:
+  Número de comparações realizadas: 20000
+----------------------------------------
+Árvore com 30000 elementos ordenados:
+  Número de comparações realizadas: 30000
+----------------------------------------
+Árvore com 40000 elementos ordenados:
+  Número de comparações realizadas: 40000
+----------------------------------------
+Árvore com 50000 elementos ordenados:
+  Número de comparações realizadas: 50000
+----------------------------------------
+Árvore com 60000 elementos ordenados:
+  Número de comparações realizadas: 60000
+----------------------------------------
+Árvore com 70000 elementos ordenados:
+  Número de comparações realizadas: 70000
+----------------------------------------
+Árvore com 80000 elementos ordenados:
+  Número de comparações realizadas: 80000
+----------------------------------------
+Árvore com 90000 elementos ordenados:
+  Número de comparações realizadas: 90000
+----------------------------------------
+Árvore com 100000 elementos ordenados:
+  Número de comparações realizadas: 100000
+----------------------------------------
