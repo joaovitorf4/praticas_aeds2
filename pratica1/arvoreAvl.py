@@ -11,7 +11,7 @@ class ArvoreAVL:
     def __init__(self):
         self.raiz = None
 
-    def buscar(self, noAtual, valorBuscado, quantidade = 0):
+    def buscar(self, noAtual, valorBuscado, quantidade = 0): # Busca um valor na árvore AVL recursivamente
         if noAtual is None:
             return (False, quantidade)
 
@@ -24,19 +24,19 @@ class ArvoreAVL:
         else:
             return (True, quantidade)
 
-    def getAltura(self, no):
+    def getAltura(self, no): # Retorna a altura de um nó
         if no is None:
             return 0
 
         return no.altura     
 
-    def getFatorBalanceamento(self, no):
+    def getFatorBalanceamento(self, no): # Calcula o fator de rebalanceamento de um nó
         if no is None: 
             return 0
 
         return self.getAltura(no.esquerdo) - self.getAltura(no.direito)
 
-    def rsd(self, y):
+    def rsd(self, y): # Realiza uma rotação siples à direita
         x = y.esquerdo
         subArvoreDir = x.direito
         x.direito = y
@@ -45,7 +45,7 @@ class ArvoreAVL:
         x.altura = 1 + max(self.getAltura(x.direito), self.getAltura(x.esquerdo))
         return x
     
-    def rse(self, y):
+    def rse(self, y): # Realiza uma rotação simpels à esquerda
         x = y.direito
         subArvoreEsq = x.esquerdo
         x.esquerdo = y
@@ -54,17 +54,17 @@ class ArvoreAVL:
         x.altura = 1 + max(self.getAltura(x.direito), self.getAltura(x.esquerdo))
         return x
     
-    def rde(self, no):
+    def rde(self, no): # Realiza uma rotação dupla: direita-esquerda
         no.direito = self.rsd(no.direito)
         no = self.rse(no)
         return no
     
-    def rdd(self, no):
+    def rdd(self, no): # Realiza uma rotação dupla: esquerda-direita
         no.esquerdo = self.rse(no.esquerdo)
         no = self.rsd(no)
         return no
     
-    def inserir(self, noAtual, valor):
+    def inserir(self, noAtual, valor): # Insere um valor na árvore AVL mantendo o balanceamente
         if noAtual is None:
             return NoAVL(valor)
         
