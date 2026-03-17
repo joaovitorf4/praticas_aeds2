@@ -1,4 +1,6 @@
 # Árvore Binária de Pesquisa sem Balanceamento
+import random
+import math
 
 class Node:
     def __init__(self, key):
@@ -46,3 +48,20 @@ class UnbalancedBST:
                 current = current.right
         return False, comparisons
 
+
+if __name__ == "__main__":
+    arvore = UnbalancedBST()
+    elemento_pesquisa = 100001
+
+    elementos = [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000]
+
+    random.shuffle(elementos) # Comente essa linha para inserir de forma ordenada
+
+    for elemento in elementos:
+        arvore.insert(elemento)
+
+    encontrado, num_comparacoes = arvore.search_with_comparisons(elemento_pesquisa)
+
+    print(f"Elemento {elemento_pesquisa} encontrado? {encontrado}")
+    print(f"Número de comparações realizadas: {num_comparacoes}")
+    print(f"Log2(10)={math.log2(len(elementos))}")
