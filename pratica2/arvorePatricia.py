@@ -87,8 +87,30 @@ class ArvorePatricia:
         return no_atual
     
     def buscar(self, palavra):
-        # implementação de busca na Árvore Patrícia 
-        pass
+        # implementação da busca ma árvore patrícia
+
+        # se a árvore estiver vazia, não tem o que buscar
+        if self.raiz is None: 
+            return None
+        
+        # converte a arvore em 128 bits
+        bits = self.preparar_palavra(palavra)
+        no_atual = self.raiz
+
+        # enquanto for nó interno, desce na árvore testando o bit correpondente
+        while isinstance(no_atual, NoInterno):
+            if self._get_bit(bits,no_atual.bit_indice) == 0:
+                no_atual = no_atual.esquerdo
+            else: 
+                no_atual = no_atual.direito
+
+        # quando chega na folha, verifica se não é um falso positivo, pois os nís internos não armazenam palavras
+        if no_atual.chave_bits == bits:
+            return no_atual.ocorrencias
+        
+        # se não bateu, a palavra não tá na árvore
+        return None
+
 
 def preenche_arvore(arvore, caminho_arquivo):
     # lê o arquivo de texto e insere cada palavra válida na Árvore Patrícia
@@ -112,11 +134,48 @@ def preenche_arvore(arvore, caminho_arquivo):
 # ÁREA DE EXECUÇÃO
 
 if __name__ == "__main__":
-    arvore = ArvorePatricia()
-    # cria Arvore Patricia
-    
-    # preenche_arvore(arvore, 'exemplo1.txt')
-    # indexa arquivo exemplo 1
+    # cria Arvore Patricia para exemplo 1
+    arvore1 = ArvorePatricia()
 
-    # preenche_arvore(arvore, 'exemplo2.txt')
+    # indexa arquivo exemplo 1
+    preenche_arvore(arvore1, 'pratica2/exemplo1.txt')
+
+    # palavras do exemplo 1
+    palavras_busca_exemplo1 = ["trabalho", "computacao", "governo", "educacao", "tecnologia", "formacao", "desenvolvimento", "que", "informatica", "em", "crise"]
+
+    # faz a impressão das palavras do exemplo 1
+    print('\n' + "="*40)
+    print("RESULTADOS DA BUSCA - EXEMPLO 1")
+    print("="*40)
+
+    for palavra in palavras_busca_exemplo1:
+        ocorrencias = arvore1.buscar(palavra)
+        if ocorrencias: 
+            # imprime a linha e a coluna se a palavra foi encontrada ou avisa que não foi encontrada
+            quantidade = len(ocorrencias)
+            print(f"Palavra '{palavra}': ENCONTRADA ({quantidade} ocorrência(s)) -> Posições: {ocorrencias}")
+        else: 
+            print(f"Palavra '{palavra}': NÃO ENCONTRADA")
+            
+    # cria Arvore Patricia para exemplo 2
+    arvore2 = ArvorePatricia()
+
     # indexa arquivo exemplo 2
+    preenche_arvore(arvore2, 'pratica2/exemplo2.txt')
+
+    # palavras do exemplo 2
+    palavras_busca_exemplo2 = ["sociedade", "software", "ideia", "pessoa", "Informatica", "etica", "muito", "ciencia", "computacao", "que", "area", "moral"]
+
+    # faz a impressão das palavras do exemplo 2
+    print('\n' + "="*40)
+    print("RESULTADOS DA BUSCA - EXEMPLO 2")
+    print("="*40)
+
+    for palavra in palavras_busca_exemplo2:
+        ocorrencias = arvore2.buscar(palavra)
+        if ocorrencias: 
+            # imprime a linha e a coluna se a palavra foi encontrada ou avisa que não foi encontrada
+            quantidade = len(ocorrencias)
+            print(f"Palavra '{palavra}': ENCONTRADA ({quantidade} ocorrência(s)) -> Posições: {ocorrencias}")
+        else: 
+            print(f"Palavra '{palavra}': NÃO ENCONTRADA")
