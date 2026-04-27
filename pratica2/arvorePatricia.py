@@ -138,7 +138,7 @@ if __name__ == "__main__":
     arvore1 = ArvorePatricia()
 
     # indexa arquivo exemplo 1
-    preenche_arvore(arvore1, 'pratica2/exemplo1.txt')
+    preenche_arvore(arvore1, 'exemplo1.txt')
 
     # palavras do exemplo 1
     palavras_busca_exemplo1 = ["trabalho", "computacao", "governo", "educacao", "tecnologia", "formacao", "desenvolvimento", "que", "informatica", "em", "crise"]
@@ -161,7 +161,7 @@ if __name__ == "__main__":
     arvore2 = ArvorePatricia()
 
     # indexa arquivo exemplo 2
-    preenche_arvore(arvore2, 'pratica2/exemplo2.txt')
+    preenche_arvore(arvore2, 'exemplo2.txt')
 
     # palavras do exemplo 2
     palavras_busca_exemplo2 = ["sociedade", "software", "ideia", "pessoa", "Informatica", "etica", "muito", "ciencia", "computacao", "que", "area", "moral"]
