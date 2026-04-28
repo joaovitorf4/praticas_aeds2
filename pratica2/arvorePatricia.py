@@ -1,3 +1,7 @@
+#   Giovanni Estevam Dos Santos
+#   João Vitor Lopes Fagundes
+#   Wescley Júnior Gonçalves Navarro
+
 import re
 
 class Folha:
